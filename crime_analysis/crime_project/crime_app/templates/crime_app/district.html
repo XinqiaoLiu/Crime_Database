@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Insert District Income Info </title>
+</head>
+
+<body>
+<h1>Insert District Income Info </h1>
+<form action="" method="POST">
+{% csrf_token %}
+Neighborhood: <input type="text" name="Neighborhood"/><br/>
+Population: <input type="number" name="Population"/><br/>
+Home Value: <input type="number" name="Home_Value"/><br/>
+Median Income: <input type="number" name="Median_Income"/><br/>
+<input type="submit" value="Submit"/>
+</form>
+</body>
+
+</html>
