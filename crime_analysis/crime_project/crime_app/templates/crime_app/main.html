@@ -21,7 +21,7 @@
     Median Income: <input type="number" name="Median_Income"/><br/>
                   <input type="submit" value="Submit"/>
   </form>
-  
+
 
   <h1>Update District Income Info </h1>
   <form action="http://127.0.0.1:8000/crime_app/update_district/" method="POST">
@@ -41,4 +41,43 @@
     Neighborhood: <input type="text" name="Neighborhood"/><br/>
 
                 <input type="submit" value="Submit"/>
+  </form>
+
+
+  <h1>Insert Crime Info </h1>
+  <form action="http://127.0.0.1:8000/crime_app/insert_crime/" method="POST">
+  {% csrf_token %}
+  ID: <input type="number" name="ID"/><br/>
+
+  Type: <input type="text" name="Type"/><br/>
+
+  Area_id: <input type="number" name="Area_id"/><br/>
+  <input type="submit" value="Submit"/>
+  </form>
+
+
+  <h1>Search Crime Info </h1>
+  <form action="http://127.0.0.1:8000/crime_app/search_crime/" method="GET">
+  {% csrf_token %}
+  Crime ID: <input type="number" name="ID"/><br/>
+
+  <input type="submit" value="Submit"/>
+  </form>
+
+  <h1>Update Crime Info </h1>
+  <form action="http://127.0.0.1:8000/crime_app/update_crime/" method="POST">
+  {% csrf_token %}
+  ID: <input type="number" name="ID"/><br/>
+  Type: <input type="text" name="Type"/><br/>
+  Area_id: <input type="number" name="Area_id"/><br/>
+
+  <input type="submit" value="Submit"/>
+  </form>
+
+  <h1>Delete Crime Info </h1>
+  <form action="http://127.0.0.1:8000/crime_app/delete_crime/" method="POST">
+  {% csrf_token %}
+  Crime ID: <input type="number" name="ID"/><br/>
+
+  <input type="submit" value="Submit"/>
   </form>

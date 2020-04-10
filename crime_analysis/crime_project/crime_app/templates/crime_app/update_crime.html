@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Update Crime Info </title>
+</head>
+
+<body>
+<h1>Update Crime Info </h1>
+<form action="http://127.0.0.1:8000/crime_app/update_crime/" method="POST">
+{% csrf_token %}
+ID: <input type="number" name="ID"/><br/>
+Type: <input type="text" name="Type"/><br/>
+Area_id: <input type="number" name="Area_id"/><br/>
+
+<input type="submit" value="Submit"/>
+</form>
+
+{%if c%}
+<li>
+  ID: {{c.ID}}
+</li>
+<li>
+  Type: {{c.Type}}
+</li>
+<li>
+  Area_id: {{c.Area_id}}
+</li>
+
+<p>has been updated</p>
+{% endif%}
+
+</body>
+
+</html>

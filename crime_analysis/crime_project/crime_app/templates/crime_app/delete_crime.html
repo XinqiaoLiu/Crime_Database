@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Delete Crime Info </title>
+</head>
+
+<body>
+<h1>Delete Crime Info </h1>
+<form action="http://127.0.0.1:8000/crime_app/delete_crime/" method="POST">
+{% csrf_token %}
+Crime ID: <input type="number" name="ID"/><br/>
+
+<input type="submit" value="Submit"/>
+</form>
+{% if c_id%}
+<p>All information about {{c_id}} has been deleted</p>
+{%endif%}
+
+</body>
+
+</html>
