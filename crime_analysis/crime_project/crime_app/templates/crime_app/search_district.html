@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Search District Income Info </title>
+</head>
+
+<body>
+<h1>Search District Income Info </h1>
+<form action="http://127.0.0.1:8000/crime_app/search_district/" method="GET">
+{% csrf_token %}
+Neighborhood: <input type="text" name="Neighborhood"/><br/>
+
+<input type="submit" value="Submit"/>
+</form>
+
+{%if d%}
+<li>
+  Neighborhood: {{d.Neighborhood}}
+</li>
+<li>
+  Population: {{d.Population}}
+</li>
+<li>
+  Home_Value: {{d.Home_Value}}
+</li>
+<li>
+  Median_Income: {{d.Median_Income}}
+</li>
+{% endif%}
+{%if dne%}
+<p>{{dne}}</p>
+{%endif%}
+</body>
+
+</html>

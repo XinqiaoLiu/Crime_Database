@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Update District Income Info </title>
+</head>
+
+<body>
+<h1>Update District Income Info </h1>
+<form action="http://127.0.0.1:8000/crime_app/update_district/" method="POST">
+{% csrf_token %}
+Neighborhood: <input type="text" name="Neighborhood"/><br/>
+Population: <input type="number" name="Population"/><br/>
+Home Value: <input type="number" name="Home_Value"/><br/>
+Median Income: <input type="number" name="Median_Income"/><br/>
+<input type="submit" value="Submit"/>
+</form>
+
+{%if d%}
+<li>
+  Neighborhood: {{d.Neighborhood}}
+</li>
+<li>
+  Population: {{d.Population}}
+</li>
+<li>
+  Home_Value: {{d.Home_Value}}
+</li>
+<li>
+  Median_Income: {{d.Median_Income}}
+</li>
+<p>has been updated</p>
+{% endif%}
+
+</body>
+
+</html>

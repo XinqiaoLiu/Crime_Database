@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Delete District Income Info </title>
+</head>
+
+<body>
+<h1>Delete District Income Info </h1>
+<form action="http://127.0.0.1:8000/crime_app/delete_district/" method="POST">
+{% csrf_token %}
+Neighborhood: <input type="text" name="Neighborhood"/><br/>
+
+<input type="submit" value="Submit"/>
+</form>
+{% if d_name%}
+<p>All information about {{d_name}} has been deleted</p>
+{%endif%}
+
+</body>
+
+</html>
