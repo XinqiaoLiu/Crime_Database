@@ -1,0 +1,77 @@
+1, North Center
+2, Loop
+3, Lake View
+4, Lincoln Park
+5, Edison Park
+6, Lincoln Square
+7, Near North Side
+8, Logan Square
+9, Forest Glen
+10, West Town
+11, Albany Park
+12, Norwood Park
+13, Irving Park
+14, Jefferson Park
+15, Edgewater
+16, Near South Side
+17, Dunning
+18, Mount Greenwood
+19, Avondale
+20, West Ridge
+21, Beverly
+22, Pottage Park
+23, Hyde Park
+24, Montclare
+25, Bridgeport
+26, Uptown
+27, Hermosa
+28, North Park
+29, West Elsdon
+30, Belmont Cragin
+31, Rogers Park
+32, Clearing
+33, Brighton Park
+34, Garfield Ridge
+35, Near West Side
+36, West Lawn
+37, Kenwood
+38, Ashburn
+39, O'hare
+40, South Lawndale
+41, Lower West Side
+42, Mckinley Park
+43, Morgan Park
+44, Gage Park
+45, Hegewisch
+46, Armour Square
+47, Archer Heights
+48, Humboldt Park
+49, Calumet Heights
+50, Douglas
+51, Washington Heights
+52, East Side
+53, Austin
+54, Grand Boulevard
+55, Avalon Park
+56, South Shore
+57, Chicago Lawn
+58, Oakland
+59, West Garfield Park
+60, Woodlawn
+61, East Garfield Park
+62, Auburn Gresham
+63, New City
+64, Roseland
+65, Chatham
+66, North Lawndale
+67, West Pullman
+68, South Chicago
+69, Grand Crossing
+70, Pullman
+71, South Deering
+72, Burnside
+73, West Englewood
+74, Fuller Park
+75, Washington Park
+76, Englewood
+77, Riverdale

@@ -11,7 +11,7 @@ class district(models.Model):
     Median_Income = models.IntegerField()
 class crime(models.Model):
     ID = models.IntegerField(primary_key=True)
-    Time = models.DateTimeField(default=datetime.now)
+    Ctime = models.DateTimeField(default=datetime.now)
     Type = models.CharField(max_length=200)
     #Arrest = models.BooleanField()
     Area_id = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(90)])

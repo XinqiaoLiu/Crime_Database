@@ -62,7 +62,7 @@ def insert_crime(request):
         if request.POST.get("ID") and request.POST.get("Type") and request.POST.get("Area_id") and request.POST.get("Time"):
             c = crime()
             c.ID = request.POST.get("ID")
-            c.Time = request.POST.get("Time")
+            c.Ctime = request.POST.get("Time")
             c.Type = request.POST.get("Type")
             c.Area_id = request.POST.get("Area_id")
             c.save()
@@ -88,7 +88,7 @@ def update_crime(request):
         if c_id is not None:
             c = crime.objects.get(pk=c_id)
             if request.POST.get("Time"):
-                c.Area_id = request.POST.get("Time")
+                c.Ctime = request.POST.get("Time")
             if request.POST.get("Type"):
                 c.Type = request.POST.get("Type")
             if request.POST.get("Area_id"):
@@ -113,17 +113,12 @@ def recommend(request):
         g = request.GET.get("Gender")
         a = request.GET.get("Age")
         v = request.GET.get("Visit")
-        age_group = "children"
+
 
         if a is not None and a!='':
             a = int(a)
+            age_group = GetAgeGroup(a)
 
-            if a>14 and a<30:
-                age_group = "adolescent"
-            elif a>=30 and a<60:
-                age_group = "adult"
-            elif a>=60:
-                age_group = "senior"
             num_crime = 0
             with connection.cursor() as cursor:
                 cursor.callproc("GetCrimeCount",[v,num_crime])
@@ -152,12 +147,69 @@ def route(request):
 
         t = request.GET.get("Time")
         v1 = request.GET.get("Visit1")
-        v3 = request.GET.get("Visit2")
+        v2 = request.GET.get("Visit2")
         v3 = request.GET.get("Visit3")
         if a is not None and a!='':
             a = int(a)
+            age_group = GetAgeGroup(a)
+            date = t.split(" ")[0]
+            time = t.split(" ")[1]
+            month = date.split("-")[1]
+            day = date.split("-")[2]
+            hour = time.split(":")[0]
+
+            if 24-int(hour) <= 3:
+                return render(request, 'crime_app/route.html',{'late':1,'time':time})
+            interval = int((24-int(hour))/3)
+            v_list = [v1,v2,v3]
+            rate_list_list = []
+            rec_route = []
+            rec_route_idx = []
+            for v in v_list:
+                rate_list = []
+                for j in range(3):
+                    shour = str(int(hour)+j*interval)
+                    ehour = str(int(shour)+interval)
+
+                    starttime = "2019-"+month+"-"+day+" "+shour+":00"
+                    endtime = "2019-"+month+"-"+day+" "+ehour+":00"
+                    rate = 0.0
+
+                    with connection.cursor() as cursor:
+                        cursor.callproc("GetDanger",[g,age_group,v,starttime,endtime,rate])
+                        cursor.execute('select @_GetDanger_5')
+                        rate = cursor.fetchall()[0][0]
+                    print(rate)
+                    rate_list.append(rate)
+                rate_list_list.append(rate_list)
+            min = float('inf')
+            for i in range(3):
+                for j in range(3):
+                    for k in range(3):
+                        if i==j or i==k or j==k:
+                            continue;
+                        if min>rate_list_list[0][i]+rate_list_list[1][j]+rate_list_list[2][k]:
+                            min = rate_list_list[0][i]+rate_list_list[1][j]+rate_list_list[2][k]
+                            rec_route_idx = [i,j,k]
+
+            for i in range(3):
+                for j in range(3):
+                    if rec_route_idx[j] == i:
+                        rec_route.append(v_list[j])
+            f = True
+            return render(request, 'crime_app/route.html',{'rec_route':rec_route})
         else:
             return render(request, 'crime_app/route.html')
     return render(request, 'crime_app/route.html')
 def main_page(request):
     return render(request,'crime_app/main.html')
+
+def GetAgeGroup(a):
+    age_group = "children"
+    if a>14 and a<30:
+        age_group = "adolescent"
+    elif a>=30 and a<60:
+        age_group = "adult"
+    elif a>=60:
+        age_group = "senior"
+    return age_group
