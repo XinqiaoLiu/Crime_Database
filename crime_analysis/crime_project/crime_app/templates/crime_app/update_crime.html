@@ -8,6 +8,7 @@
 <form action="http://127.0.0.1:8000/crime_app/update_crime/" method="POST">
 {% csrf_token %}
 ID: <input type="number" name="ID"/><br/>
+Time: <input type = "datatime" name = "Time"/><br>
 Type: <input type="text" name="Type"/><br/>
 Area_id: <input type="number" name="Area_id"/><br/>
 

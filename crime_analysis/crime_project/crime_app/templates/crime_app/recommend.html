@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Recommendation </title>
+
+</head>
+
+<body>
+<h1>Recommendation </h1>
+<form action="http://127.0.0.1:8000/crime_app/recommend/" method="GET">
+{% csrf_token %}
+Gender: <input type="text" name="Gender"/><br/>
+Age: <input type="number" name="Age"/><br/>
+Visit: <input type="text" name="Visit"/><br/>
+<input type="submit" value="Submit"/>
+</form>
+
+{%if num_crime >= 0%}
+<p>There are {{num_crime}} crimes in this neighborhood</p>
+{%for count,type in crime_list%}
+<li>{{count}} {{type}}</li>
+{%endfor%}
+<p>The danger level is {{danger}}</p>
+{%if danger >= 5.0%}
+<p>Hmmm, probably get someone with you</p>
+{% endif%}
+{%if danger < 5.0%}
+<p>This neighborhood is safe for you</p>
+{% endif%}
+{% endif%}
+{%if dne%}
+<p>{{dne}}</p>
+{%endif%}
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+Type,Gender,Age,Level
+ARSON,male,children,10.0
+ARSON,male,adolescent,9.0
+ARSON,male,adult,8.0
+ARSON,male,senior,8.0
+ARSON,female,children,10.0
+ARSON,female,adolescent,9.0
+ARSON,female,adult,8.0
+ARSON,female,senior,8.0
+ASSAULT,male,children,7.5
+ASSAULT,male,adolescent,6.75
+ASSAULT,male,adult,6.0
+ASSAULT,male,senior,6.0
+ASSAULT,female,children,7.5
+ASSAULT,female,adolescent,6.75
+ASSAULT,female,adult,6.0
+ASSAULT,female,senior,6.0
+BATTERY,male,children,7.5
+BATTERY,male,adolescent,6.75
+BATTERY,male,adult,6.0
+BATTERY,male,senior,6.0
+BATTERY,female,children,7.5
+BATTERY,female,adolescent,6.75
+BATTERY,female,adult,6.0
+BATTERY,female,senior,6.0
+BURGLARY,male,children,2.5
+BURGLARY,male,adolescent,2.25
+BURGLARY,male,adult,2.0
+BURGLARY,male,senior,2.0
+BURGLARY,female,children,2.5
+BURGLARY,female,adolescent,2.25
+BURGLARY,female,adult,2.0
+BURGLARY,female,senior,2.0
+CONCEALED CARRY LICENSE VIOLATION,male,children,2.5
+CONCEALED CARRY LICENSE VIOLATION,male,adolescent,2.25
+CONCEALED CARRY LICENSE VIOLATION,male,adult,2.0
+CONCEALED CARRY LICENSE VIOLATION,male,senior,2.0
+CONCEALED CARRY LICENSE VIOLATION,female,children,2.5
+CONCEALED CARRY LICENSE VIOLATION,female,adolescent,2.25
+CONCEALED CARRY LICENSE VIOLATION,female,adult,2.0
+CONCEALED CARRY LICENSE VIOLATION,female,senior,2.0
+CRIM SEXUAL ASSAULT,male,children,7.5
+CRIM SEXUAL ASSAULT,male,adolescent,6.75
+CRIM SEXUAL ASSAULT,male,adult,6.0
+CRIM SEXUAL ASSAULT,male,senior,6.0
+CRIM SEXUAL ASSAULT,female,children,7.5
+CRIM SEXUAL ASSAULT,female,adolescent,6.75
+CRIM SEXUAL ASSAULT,female,adult,6.0
+CRIM SEXUAL ASSAULT,female,senior,6.0
+CRIMINAL DAMAGE,male,children,2.5
+CRIMINAL DAMAGE,male,adolescent,2.25
+CRIMINAL DAMAGE,male,adult,2.0
+CRIMINAL DAMAGE,male,senior,2.0
+CRIMINAL DAMAGE,female,children,2.5
+CRIMINAL DAMAGE,female,adolescent,2.25
+CRIMINAL DAMAGE,female,adult,2.0
+CRIMINAL DAMAGE,female,senior,2.0
+CRIMINAL SEXUAL ASSAULT,male,children,7.5
+CRIMINAL SEXUAL ASSAULT,male,adolescent,6.75
+CRIMINAL SEXUAL ASSAULT,male,adult,6.0
+CRIMINAL SEXUAL ASSAULT,male,senior,6.0
+CRIMINAL SEXUAL ASSAULT,female,children,7.5
+CRIMINAL SEXUAL ASSAULT,female,adolescent,6.75
+CRIMINAL SEXUAL ASSAULT,female,adult,6.0
+CRIMINAL SEXUAL ASSAULT,female,senior,6.0
+CRIMINAL TRESPASS,male,children,3.75
+CRIMINAL TRESPASS,male,adolescent,3.375
+CRIMINAL TRESPASS,male,adult,3.0
+CRIMINAL TRESPASS,male,senior,3.0
+CRIMINAL TRESPASS,female,children,3.75
+CRIMINAL TRESPASS,female,adolescent,3.375
+CRIMINAL TRESPASS,female,adult,3.0
+CRIMINAL TRESPASS,female,senior,3.0
+DECEPTIVE PRACTICE,male,children,1.25
+DECEPTIVE PRACTICE,male,adolescent,1.125
+DECEPTIVE PRACTICE,male,adult,1.0
+DECEPTIVE PRACTICE,male,senior,1.0
+DECEPTIVE PRACTICE,female,children,1.25
+DECEPTIVE PRACTICE,female,adolescent,1.125
+DECEPTIVE PRACTICE,female,adult,1.0
+DECEPTIVE PRACTICE,female,senior,1.0
+GAMBLING,male,children,1.25
+GAMBLING,male,adolescent,1.125
+GAMBLING,male,adult,1.0
+GAMBLING,male,senior,1.0
+GAMBLING,female,children,1.25
+GAMBLING,female,adolescent,1.125
+GAMBLING,female,adult,1.0
+GAMBLING,female,senior,1.0
+HOMICIDE,male,children,10.0
+HOMICIDE,male,adolescent,9.0
+HOMICIDE,male,adult,8.0
+HOMICIDE,male,senior,8.0
+HOMICIDE,female,children,10.0
+HOMICIDE,female,adolescent,9.0
+HOMICIDE,female,adult,8.0
+HOMICIDE,female,senior,8.0
+HUMAN TRAFFICKING,male,children,8.75
+HUMAN TRAFFICKING,male,adolescent,7.875
+HUMAN TRAFFICKING,male,adult,7.0
+HUMAN TRAFFICKING,male,senior,7.0
+HUMAN TRAFFICKING,female,children,8.75
+HUMAN TRAFFICKING,female,adolescent,7.875
+HUMAN TRAFFICKING,female,adult,7.0
+HUMAN TRAFFICKING,female,senior,7.0
+INTERFERENCE WITH PUBLIC OFFICER,male,children,3.75
+INTERFERENCE WITH PUBLIC OFFICER,male,adolescent,3.375
+INTERFERENCE WITH PUBLIC OFFICER,male,adult,3.0
+INTERFERENCE WITH PUBLIC OFFICER,male,senior,3.0
+INTERFERENCE WITH PUBLIC OFFICER,female,children,3.75
+INTERFERENCE WITH PUBLIC OFFICER,female,adolescent,3.375
+INTERFERENCE WITH PUBLIC OFFICER,female,adult,3.0
+INTERFERENCE WITH PUBLIC OFFICER,female,senior,3.0
+INTIMIDATION,male,children,3.75
+INTIMIDATION,male,adolescent,3.375
+INTIMIDATION,male,adult,3.0
+INTIMIDATION,male,senior,3.0
+INTIMIDATION,female,children,3.75
+INTIMIDATION,female,adolescent,3.375
+INTIMIDATION,female,adult,3.0
+INTIMIDATION,female,senior,3.0
+KIDNAPPING,male,children,8.75
+KIDNAPPING,male,adolescent,7.875
+KIDNAPPING,male,adult,7.0
+KIDNAPPING,male,senior,7.0
+KIDNAPPING,female,children,8.75
+KIDNAPPING,female,adolescent,7.875
+KIDNAPPING,female,adult,7.0
+KIDNAPPING,female,senior,7.0
+LIQUOR LAW VIOLATION,male,children,1.25
+LIQUOR LAW VIOLATION,male,adolescent,1.125
+LIQUOR LAW VIOLATION,male,adult,1.0
+LIQUOR LAW VIOLATION,male,senior,1.0
+LIQUOR LAW VIOLATION,female,children,1.25
+LIQUOR LAW VIOLATION,female,adolescent,1.125
+LIQUOR LAW VIOLATION,female,adult,1.0
+LIQUOR LAW VIOLATION,female,senior,1.0
+MOTOR VEHICLE THEFT,male,children,3.75
+MOTOR VEHICLE THEFT,male,adolescent,3.375
+MOTOR VEHICLE THEFT,male,adult,3.0
+MOTOR VEHICLE THEFT,male,senior,3.0
+MOTOR VEHICLE THEFT,female,children,3.75
+MOTOR VEHICLE THEFT,female,adolescent,3.375
+MOTOR VEHICLE THEFT,female,adult,3.0
+MOTOR VEHICLE THEFT,female,senior,3.0
+NARCOTICS,male,children,6.25
+NARCOTICS,male,adolescent,5.625
+NARCOTICS,male,adult,5.0
+NARCOTICS,male,senior,5.0
+NARCOTICS,female,children,6.25
+NARCOTICS,female,adolescent,5.625
+NARCOTICS,female,adult,5.0
+NARCOTICS,female,senior,5.0
+NON-CRIMINAL,male,children,0.0
+NON-CRIMINAL,male,adolescent,0.0
+NON-CRIMINAL,male,adult,0.0
+NON-CRIMINAL,male,senior,0.0
+NON-CRIMINAL,female,children,0.0
+NON-CRIMINAL,female,adolescent,0.0
+NON-CRIMINAL,female,adult,0.0
+NON-CRIMINAL,female,senior,0.0
+OBSCENITY,male,children,5.0
+OBSCENITY,male,adolescent,4.5
+OBSCENITY,male,adult,4.0
+OBSCENITY,male,senior,4.0
+OBSCENITY,female,children,5.0
+OBSCENITY,female,adolescent,4.5
+OBSCENITY,female,adult,4.0
+OBSCENITY,female,senior,4.0
+OFFENSE INVOLVING CHILDREN,male,children,6.25
+OFFENSE INVOLVING CHILDREN,male,adolescent,5.625
+OFFENSE INVOLVING CHILDREN,male,adult,5.0
+OFFENSE INVOLVING CHILDREN,male,senior,5.0
+OFFENSE INVOLVING CHILDREN,female,children,6.25
+OFFENSE INVOLVING CHILDREN,female,adolescent,5.625
+OFFENSE INVOLVING CHILDREN,female,adult,5.0
+OFFENSE INVOLVING CHILDREN,female,senior,5.0
+OTHER NARCOTIC VIOLATION,male,children,5.0
+OTHER NARCOTIC VIOLATION,male,adolescent,4.5
+OTHER NARCOTIC VIOLATION,male,adult,4.0
+OTHER NARCOTIC VIOLATION,male,senior,4.0
+OTHER NARCOTIC VIOLATION,female,children,5.0
+OTHER NARCOTIC VIOLATION,female,adolescent,4.5
+OTHER NARCOTIC VIOLATION,female,adult,4.0
+OTHER NARCOTIC VIOLATION,female,senior,4.0
+OTHER OFFENSE,male,children,5.0
+OTHER OFFENSE,male,adolescent,4.5
+OTHER OFFENSE,male,adult,4.0
+OTHER OFFENSE,male,senior,4.0
+OTHER OFFENSE,female,children,5.0
+OTHER OFFENSE,female,adolescent,4.5
+OTHER OFFENSE,female,adult,4.0
+OTHER OFFENSE,female,senior,4.0
+PROSTITUTION,male,children,1.25
+PROSTITUTION,male,adolescent,1.125
+PROSTITUTION,male,adult,1.0
+PROSTITUTION,male,senior,1.0
+PROSTITUTION,female,children,1.25
+PROSTITUTION,female,adolescent,1.125
+PROSTITUTION,female,adult,1.0
+PROSTITUTION,female,senior,1.0
+PUBLIC INDECENCY,male,children,3.75
+PUBLIC INDECENCY,male,adolescent,3.375
+PUBLIC INDECENCY,male,adult,3.0
+PUBLIC INDECENCY,male,senior,3.0
+PUBLIC INDECENCY,female,children,3.75
+PUBLIC INDECENCY,female,adolescent,3.375
+PUBLIC INDECENCY,female,adult,3.0
+PUBLIC INDECENCY,female,senior,3.0
+PUBLIC PEACE VIOLATION,male,children,1.25
+PUBLIC PEACE VIOLATION,male,adolescent,1.125
+PUBLIC PEACE VIOLATION,male,adult,1.0
+PUBLIC PEACE VIOLATION,male,senior,1.0
+PUBLIC PEACE VIOLATION,female,children,1.25
+PUBLIC PEACE VIOLATION,female,adolescent,1.125
+PUBLIC PEACE VIOLATION,female,adult,1.0
+PUBLIC PEACE VIOLATION,female,senior,1.0
+ROBBERY,male,children,6.25
+ROBBERY,male,adolescent,5.625
+ROBBERY,male,adult,5.0
+ROBBERY,male,senior,5.0
+ROBBERY,female,children,6.25
+ROBBERY,female,adolescent,5.625
+ROBBERY,female,adult,5.0
+ROBBERY,female,senior,5.0
+SEX OFFENSE,male,children,6.25
+SEX OFFENSE,male,adolescent,5.625
+SEX OFFENSE,male,adult,5.0
+SEX OFFENSE,male,senior,5.0
+SEX OFFENSE,female,children,6.25
+SEX OFFENSE,female,adolescent,5.625
+SEX OFFENSE,female,adult,5.0
+SEX OFFENSE,female,senior,5.0
+STALKING,male,children,5.0
+STALKING,male,adolescent,4.5
+STALKING,male,adult,4.0
+STALKING,male,senior,4.0
+STALKING,female,children,5.0
+STALKING,female,adolescent,4.5
+STALKING,female,adult,4.0
+STALKING,female,senior,4.0
+THEFT,male,children,2.5
+THEFT,male,adolescent,2.25
+THEFT,male,adult,2.0
+THEFT,male,senior,2.0
+THEFT,female,children,2.5
+THEFT,female,adolescent,2.25
+THEFT,female,adult,2.0
+THEFT,female,senior,2.0
+WEAPONS VIOLATION,male,children,6.25
+WEAPONS VIOLATION,male,adolescent,5.625
+WEAPONS VIOLATION,male,adult,5.0
+WEAPONS VIOLATION,male,senior,5.0
+WEAPONS VIOLATION,female,children,6.25
+WEAPONS VIOLATION,female,adolescent,5.625
+WEAPONS VIOLATION,female,adult,5.0
+WEAPONS VIOLATION,female,senior,5.0

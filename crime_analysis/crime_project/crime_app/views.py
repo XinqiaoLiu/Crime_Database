@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import district, crime
+from .models import district, crime, danger, district_id
 from django.http import Http404
 from django.contrib import messages
 import datetime
+from django.db.models import Count
+from django.db import connection
 # Create your views here.
 
 def insert_district(request):
@@ -57,12 +59,11 @@ def delete_district(request):
 
 def insert_crime(request):
     if request.method=='POST':
-        if request.POST.get("ID") and request.POST.get("Type") and request.POST.get("Area_id"):
+        if request.POST.get("ID") and request.POST.get("Type") and request.POST.get("Area_id") and request.POST.get("Time"):
             c = crime()
             c.ID = request.POST.get("ID")
-            #c.Date = request.POST.get("Date")
+            c.Time = request.POST.get("Time")
             c.Type = request.POST.get("Type")
-            #c.Arrest = request.POST.get("Arrest")
             c.Area_id = request.POST.get("Area_id")
             c.save()
             return render(request, 'crime_app/insert_crime.html',{'c':c})
@@ -86,6 +87,8 @@ def update_crime(request):
 
         if c_id is not None:
             c = crime.objects.get(pk=c_id)
+            if request.POST.get("Time"):
+                c.Area_id = request.POST.get("Time")
             if request.POST.get("Type"):
                 c.Type = request.POST.get("Type")
             if request.POST.get("Area_id"):
@@ -105,7 +108,56 @@ def delete_crime(request):
 
         return render(request, 'crime_app/delete_crime.html')
 
+def recommend(request):
+    if request.method=='GET':
+        g = request.GET.get("Gender")
+        a = request.GET.get("Age")
+        v = request.GET.get("Visit")
+        age_group = "children"
 
+        if a is not None and a!='':
+            a = int(a)
 
+            if a>14 and a<30:
+                age_group = "adolescent"
+            elif a>=30 and a<60:
+                age_group = "adult"
+            elif a>=60:
+                age_group = "senior"
+            num_crime = 0
+            with connection.cursor() as cursor:
+                cursor.callproc("GetCrimeCount",[v,num_crime])
+                cursor.execute('select @_GetCrimeCount_1')
+                num_crime = cursor.fetchall()[0][0]
+            v_id = district_id.objects.filter(Neighborhood=v).values('ID')[0]['ID']
+            #num_crime = crime.objects.filter(Area_id=v_id).count()
+            crime_query = crime.objects.filter(Area_id=v_id).values('Type').annotate(t_count=Count('Type')).order_by('-t_count')
+            crime_list = []
+            for item in crime_query:
+                crime_list.append((item['t_count'],item['Type']))
+            danger_level = 0.0
+            for first,second in crime_list:
+
+                danger_level += first*danger.objects.filter(Type = second,Gender = g, Age = age_group).values('Level')[0]['Level']
+
+            danger_level /= num_crime
+            danger_level*=1.3
+            return render(request, 'crime_app/recommend.html',{'num_crime':num_crime,'crime_list':crime_list,'danger':danger_level})
+    return render(request, 'crime_app/recommend.html')
+
+def route(request):
+    if request.method=='GET':
+        g = request.GET.get("Gender")
+        a = request.GET.get("Age")
+
+        t = request.GET.get("Time")
+        v1 = request.GET.get("Visit1")
+        v3 = request.GET.get("Visit2")
+        v3 = request.GET.get("Visit3")
+        if a is not None and a!='':
+            a = int(a)
+        else:
+            return render(request, 'crime_app/route.html')
+    return render(request, 'crime_app/route.html')
 def main_page(request):
     return render(request,'crime_app/main.html')

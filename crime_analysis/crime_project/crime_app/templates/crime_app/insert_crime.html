@@ -8,7 +8,7 @@
 <form action="http://127.0.0.1:8000/crime_app/insert_crime/" method="POST">
 {% csrf_token %}
 ID: <input type="number" name="ID"/><br/>
-
+Time: <input type = "datetime" name = "Time"/><br>
 Type: <input type="text" name="Type"/><br/>
 
 Area_id: <input type="number" name="Area_id"/><br/>
@@ -17,7 +17,7 @@ Area_id: <input type="number" name="Area_id"/><br/>
 
 {%if c%}
 <li> {{c.ID}} </li>
-
+<li> {{c.Time}} </li>
 <li> {{c.Type}} </li>
 
 <li> {{c.Area_id}} </li>

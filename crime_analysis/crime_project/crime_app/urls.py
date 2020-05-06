@@ -12,4 +12,6 @@ urlpatterns = [
     path('search_crime/', views.search_crime, name = 'search_crime'),
     path('update_crime/', views.update_crime, name = 'update_crime'),
     path('delete_crime/', views.delete_crime, name = 'delete_crime'),
+    path('recommend/', views.recommend, name = 'recommend'),
+    path('route/', views.route, name = 'route')
 ]
