@@ -91,3 +91,15 @@
   Visit: <input type="text" name="Visit"/><br/>
   <input type="submit" value="Submit"/>
   </form>
+
+  <h1>Route </h1>
+  <form action="http://127.0.0.1:8000/crime_app/route/" method="GET">
+  {% csrf_token %}
+  Gender: <input type="text" name="Gender"/><br/>
+  Age: <input type="number" name="Age"/><br/>
+  Time: <input type = "datetime" name="Time"/><br/>
+  Visit1: <input type="text" name="Visit1"/><br/>
+  Visit2: <input type="text" name="Visit2"/><br/>
+  Visit3: <input type="text" name="Visit3"/><br/>
+  <input type="submit" value="Submit"/>
+  </form>

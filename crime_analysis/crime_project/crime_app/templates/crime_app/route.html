@@ -23,9 +23,18 @@ Visit3: <input type="text" name="Visit3"/><br/>
 {% endif%}
 
 {%if rec_route%}
-{%for v in rec_route%}
+<p>Received Info</p>
+{%for i in info%}
 
-{{v}}
+<li>{{i}}</li>
+
+
+
+{%endfor%}
+</p>Recommended Route</p>
+{%for v,t in rec_route%}
+
+<li>Place: {{v}}, Recommend time: {{t}}</li>
 
 
 

@@ -149,7 +149,9 @@ def route(request):
         v1 = request.GET.get("Visit1")
         v2 = request.GET.get("Visit2")
         v3 = request.GET.get("Visit3")
+
         if a is not None and a!='':
+            info = [g,a,t,v1,v2,v3]
             a = int(a)
             age_group = GetAgeGroup(a)
             date = t.split(" ")[0]
@@ -157,10 +159,12 @@ def route(request):
             month = date.split("-")[1]
             day = date.split("-")[2]
             hour = time.split(":")[0]
-
-            if 24-int(hour) <= 3:
+            minute = time.split(":")[1]
+            print(hour)
+            if 23-int(hour) <= 3:
                 return render(request, 'crime_app/route.html',{'late':1,'time':time})
-            interval = int((24-int(hour))/3)
+            interval = int((23-int(hour))/3)
+            print(interval)
             v_list = [v1,v2,v3]
             rate_list_list = []
             rec_route = []
@@ -174,11 +178,16 @@ def route(request):
                     starttime = "2019-"+month+"-"+day+" "+shour+":00"
                     endtime = "2019-"+month+"-"+day+" "+ehour+":00"
                     rate = 0.0
-
+                    print(v)
+                    print(endtime)
                     with connection.cursor() as cursor:
-                        cursor.callproc("GetDanger",[g,age_group,v,starttime,endtime,rate])
+                        print(cursor.callproc("GetDanger",[g,age_group,v,starttime,endtime,rate]))
                         cursor.execute('select @_GetDanger_5')
                         rate = cursor.fetchall()[0][0]
+                        print(type(rate))
+
+                    if rate==None:
+                        rate = 0.1
                     print(rate)
                     rate_list.append(rate)
                 rate_list_list.append(rate_list)
@@ -195,9 +204,9 @@ def route(request):
             for i in range(3):
                 for j in range(3):
                     if rec_route_idx[j] == i:
-                        rec_route.append(v_list[j])
+                        rec_route.append((v_list[j],str(int(hour)+i*interval)+":"+minute))
             f = True
-            return render(request, 'crime_app/route.html',{'rec_route':rec_route})
+            return render(request, 'crime_app/route.html',{'rec_route':rec_route,'info':info})
         else:
             return render(request, 'crime_app/route.html')
     return render(request, 'crime_app/route.html')
